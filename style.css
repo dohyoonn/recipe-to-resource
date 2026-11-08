@@ -686,8 +686,90 @@ section {
    ========================================================================= */
 .resource-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 800px) {
+  .resource-grid { grid-template-columns: 1fr; }
+}
+
+.note-card {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 1.75rem 1.75rem 2rem;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.note-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(92, 132, 110, 0.35);
+}
+
+.note-tag {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(92, 132, 110, 0.18);
+  color: var(--text-secondary, #b8c2bc);
+  margin-bottom: 1rem;
+}
+
+.note-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0 0 0.4rem;
+}
+
+.note-dish {
+  display: block;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-bottom: 1.25rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-sage, #7fa38d);
+  cursor: pointer;
+  text-align: left;
+}
+
+.note-dish:hover { text-decoration: underline; }
+
+.note-heading {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-terracotta, #d08a5c);
+  margin: 1.25rem 0 0.4rem;
+}
+
+.note-text {
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: var(--text-secondary, #b8c2bc);
+  margin: 0;
+}
+
+.note-text a,
+.notes-footnote a {
+  color: var(--accent-sage, #7fa38d);
+}
+
+.notes-footnote {
+  font-size: 0.68rem;
+  line-height: 1.6;
+  color: var(--text-muted, #8a948e);
+  margin-top: 2rem;
 }
 
 .resource-card {
@@ -1358,3 +1440,67 @@ footer {
   border-color: var(--accent-terracotta);
 }
 
+
+
+/* =======================================================================
+   CITATIONS & SOURCES (Resource Notes)
+   ======================================================================= */
+.cite {
+  font-size: 0.7em;
+  line-height: 1;
+  margin-left: 1px;
+  white-space: nowrap;
+}
+
+.cite-link {
+  background: none;
+  border: none;
+  padding: 0 1px;
+  font: inherit;
+  line-height: 1;
+  color: var(--accent-terracotta);
+  cursor: pointer;
+}
+
+.cite-link:hover {
+  text-decoration: underline;
+}
+
+.sources-section {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--card-border);
+}
+
+.sources-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.sources-list {
+  padding-left: 1.4rem;
+  margin: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.sources-list li {
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  border-radius: 6px;
+  padding: 2px 6px;
+  transition: background-color 0.6s ease;
+}
+
+.sources-list a {
+  color: var(--accent-terracotta);
+  word-break: break-all;
+  margin-left: 0.25rem;
+}
+
+.source-flash {
+  background-color: var(--accent-terracotta-glow);
+}

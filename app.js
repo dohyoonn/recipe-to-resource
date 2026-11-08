@@ -117,46 +117,61 @@ function renderResourceNotes() {
   if (!grid) return;
 
   grid.innerHTML = CONFIG.resourceNotes.map(note => `
-    <div class="resource-card glass-panel">
-      <div class="resource-header">
-        <button class="dish-link" data-dish-id="${note.dishId}">
-          <i class="fa-solid fa-utensils"></i> Linked Dish: ${note.dishName}
-        </button>
-        <h3>${note.resourceAnalyzed}</h3>
-        <span class="badge"><i class="fa-solid fa-location-dot"></i> Sourced: ${note.origin}</span>
-      </div>
-      
-      <div class="resource-metrics">
-        <div class="metric-row">
-          <span class="metric-label">Estimated Carbon Footprint</span>
-          <span class="metric-val" style="color: ${note.environmentalMetrics.carbonIntensity.includes('High') ? 'var(--accent-terracotta)' : 'var(--accent-sage)'}">
-            ${note.environmentalMetrics.carbonIntensity}
-          </span>
-        </div>
-        <div class="metric-row">
-          <span class="metric-label">Water Footprint Impact</span>
-          <span class="metric-val">${note.environmentalMetrics.waterFootprint}</span>
-        </div>
-        <div class="metric-row">
-          <span class="metric-label">Waste Profile</span>
-          <span class="metric-val">${note.environmentalMetrics.wastePotential}</span>
-        </div>
-      </div>
-      
-      <div class="resource-content">
-        <h4>Production & Supply System</h4>
-        <p>${note.productionMethod}</p>
-        
-        <h4>Ecological Implications</h4>
-        <p>${note.environmentalImpact}</p>
-        
-        <h4>Resource Systems Engineering Insight</h4>
-        <p style="border-top: 1px dashed rgba(92, 132, 110, 0.2); padding-top: 0.75rem; margin-top: 0.75rem; font-style: italic;">
-          ${note.systemsInsight}
-        </p>
-      </div>
-    </div>
+    <article class="note-card">
+      <span class="note-tag">${note.tag}</span>
+      <h3 class="note-title">${note.title}</h3>
+      ${note.dishId ? `<button class="dish-link note-dish" data-dish-id="${note.dishId}">${note.dishName}</button>` : ""}
+      ${note.sections.map(sec => `
+        <h4 class="note-heading">${sec.heading}</h4>
+        <p class="note-text">${addCitations(sec.text)}</p>
+      `).join("")}
+    </article>
   `).join("");
+
+  renderSources();
+}
+
+/**
+ * Turns [1] or [1, 4] markers in note text into small clickable citation links.
+ */
+function addCitations(text) {
+  return text.replace(/\s?\[(\d+(?:,\s*\d+)*)\]/g, (match, nums) => {
+    const links = nums.split(",").map(n => n.trim()).map(n =>
+      `<button type="button" class="cite-link" data-source="${n}" aria-label="Source ${n}">${n}</button>`
+    ).join(",");
+    return `<sup class="cite">[${links}]</sup>`;
+  });
+}
+
+/**
+ * Renders the numbered Sources list at the bottom of the Resource Notes page.
+ */
+function renderSources() {
+  const box = document.getElementById("resource-sources");
+  if (!box || !CONFIG.sources) return;
+
+  box.innerHTML = `
+    <h3 class="sources-title">Sources</h3>
+    <ol class="sources-list">
+      ${CONFIG.sources.map(src => `
+        <li id="source-${src.id}">
+          ${src.text}
+          ${src.url ? `<a href="${src.url}" target="_blank" rel="noopener">${src.url.replace(/^https?:\/\//, "")}</a>` : ""}
+        </li>
+      `).join("")}
+    </ol>
+  `;
+
+  document.getElementById("resource-grid").addEventListener("click", e => {
+    const btn = e.target.closest(".cite-link");
+    if (!btn) return;
+    const item = document.getElementById(`source-${btn.dataset.source}`);
+    if (!item) return;
+    item.scrollIntoView({ behavior: "smooth", block: "center" });
+    item.classList.remove("source-flash");
+    void item.offsetWidth;
+    item.classList.add("source-flash");
+  });
 }
 
 /**
