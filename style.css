@@ -1528,4 +1528,10 @@ footer {
     margin-top: 0;
     padding-top: 1rem;
   }
+
+  /* Home & Story: less empty space above the big title on phones */
+  .hero {
+    margin-top: -1rem;
+    padding-top: 3rem;
+  }
 }
