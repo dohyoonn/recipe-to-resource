@@ -25,7 +25,7 @@ const CONFIG = {
       title: "Cooking at Home",
       subtitle: "Where it started",
       icon: "fa-fire-burner",
-      description: "Cooking for my family is where this all began. Schools, countries, and friends changed with every move, but cooking was the one thing I kept doing wherever we lived. Over time it stopped being just a way to get dinner on the table and became the thread that ties together everything else on this site."
+      description: "Cooking for my family is where this all began. Schools, countries, and friends changed with every move, but cooking was the one thing I kept doing wherever we lived. Over time it became more than a way to get dinner on the table, and it is what connects everything else on this site."
     },
     {
       id: "exploration",
@@ -522,7 +522,7 @@ const CONFIG = {
   resourceNotes: [
     {
       tag: "Food Footprint",
-      title: "Beef: the most resource-heavy thing I cook",
+      title: "Beef and its \"maintenance fee\"",
       dishId: "garlic_steak",
       dishName: "Pan-Seared Steak with Garlic and Rosemary",
       sections: [
@@ -572,7 +572,7 @@ const CONFIG = {
     },
     {
       tag: "Food Footprint",
-      title: "Rice: a grain with a methane problem",
+      title: "Rice and methane production",
       dishId: "tornado_omurice",
       dishName: "Omurice with Demi-Glace Sauce",
       sections: [
@@ -635,14 +635,14 @@ const CONFIG = {
   // Service & Impact Section (Menu Item) - 3 major high school volunteer categories
   serviceImpact: {
     title: "Summer Community Service & Relief Work",
-    description: "Every summer break, I dedicate my time to volunteering at my grandfather's farm in the rural region and my grandmother's local church. These hands-on experiences have taught me the physical reality of agricultural systems, the vulnerability of food production to natural disasters, and the power of food in building and healing communities.",
+    description: "Every summer break, I dedicate my time to volunteering at my grandfather's farm in the rural region and my grandmother's local church. These hands-on experiences have taught me the physical reality of agricultural systems and the power of food in building and healing communities.",
     themes: [
       {
         id: "farm_work",
         title: "Agricultural Farm Work",
         subtitle: "Maintaining Trees & Strawberry Farm",
-        description: "Hands-on labor supporting organic fruit cultivation and tree maintenance. Tasks included clearing invasive weed vines choking trees, executing seasonal pest prevention protocols, pruning overgrown branches to optimize sunlight exposure, and thinning excess leaves in vinyl greenhouses to secure proper ventilation for strawberry growth.",
-        reflection: "Working in the field showed me that producing food and maintaining trees is not just a chemical equation or a mechanical system—it requires endless physical care and patience. Taking care of trees and fruits under the summer heat taught me to respect the immense effort farmers invest to feed our communities.",
+        description: "Volunteering work supporting organic fruit cultivation and tree maintenance. Tasks included clearing invasive weed vines choking trees, executing seasonal pest prevention protocols, pruning overgrown branches to optimize sunlight exposure, and thinning excess leaves in vinyl greenhouses to secure proper ventilation for strawberry growth.",
+        reflection: "Working in the field showed me that producing food and maintaining trees is not just a simple system. It requires endless physical care and patience. Taking care of trees and fruits under the summer heat taught me to respect the immense effort farmers invest.",
         images: [
           "service_impact/FarmWork/farm_work_crop_care.jpg",
           "service_impact/FarmWork/20260726_082521_HDR.jpg",
@@ -665,7 +665,7 @@ const CONFIG = {
         title: "Disaster Relief & Flood Cleanup",
         subtitle: "Rebuilding in the Wake of Levee Failures",
         description: "Participating in emergency cleanups after sudden torrential rains caused a nearby local levee to fail, flooding our family farm. I assisted in clearing silt, removing water-damaged root systems, and restoring flooded crop rows.",
-        reflection: "This disaster taught me a harsh system engineering lesson: growing crops well is only half the battle. If a farm's surrounding infrastructure and disaster-prevention facilities are weak, an entire season's yield can be completely wiped out overnight, highlighting the need for resilient rural planning.",
+        reflection: "This disaster taught me a harsh lesson: growing crops well is only half the battle. If a farm's surrounding infrastructure and disaster-prevention facilities are weak, an entire season's yield can be completely wiped out overnight, highlighting the need for resilient planning.",
         images: [
           "service_impact/FloodCleanup/20250720_100729.jpg",
           "service_impact/FloodCleanup/20250720_102604_HDR.jpg",
@@ -680,7 +680,7 @@ const CONFIG = {
         title: "Community Kitchen & Food Service",
         subtitle: "Connecting People through Shared Meals",
         description: "Volunteering in the community kitchen at my grandmother's church to prepare weekly hot lunches for local seniors and families. I managed food preparation, cooking cycles, and meal distribution.",
-        reflection: "My love for cooking started in my childhood kitchen, making meals for my family. Expanding this to the church kitchen made me realize that food is the ultimate medium for human care—it connects, heals, and sustains community relationships.",
+        reflection: "My love for cooking started in my childhood kitchen, making meals for my family. Expanding this to my grandmother's local church kitchen made me realize that food is the ultimate medium for human care.",
         images: [
           "service_impact/FoodServiceVolunteer/20260712_101057_HDR.jpg",
           "service_impact/FoodServiceVolunteer/20260712_103010.jpg",
