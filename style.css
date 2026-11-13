@@ -1516,3 +1516,16 @@ footer {
 [data-theme="light"] .note-card:hover {
   border-color: var(--card-border-hover);
 }
+
+/* Phones: the menu wraps onto several lines, so let the header take up its
+   own space (sticky) instead of floating over the top of each page */
+@media (max-width: 768px) {
+  header {
+    position: sticky;
+  }
+
+  main {
+    margin-top: 0;
+    padding-top: 1rem;
+  }
+}
