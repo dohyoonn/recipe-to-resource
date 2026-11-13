@@ -619,7 +619,7 @@ const CONFIG = {
     {
       id: "cubano_sauce",
       title: "Making Cubano Sauce",
-      videoPath: "movies/Cubano Sauce.mp4#t=101",
+      videoPath: "movies/Cubano Sauce.mp4#t=5",
       description: "Squeezing fresh citrus and whisking the juice with garlic, herbs and oil into a bright, sharp sauce for marinating pork.",
       scientificNote: "Oil and citrus juice don't mix on their own. Whisking breaks the oil into tiny droplets that stay spread through the juice for a few minutes before they separate again, so I whisk or shake the sauce right before using it. The citric acid makes it sour; it doesn't hold the oil in."
     },
